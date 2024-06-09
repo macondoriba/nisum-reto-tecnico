@@ -1,17 +1,16 @@
 package com.nisum.reto.infraestructure.rest.advice;
 
+import com.nisum.reto.domain.model.dto.response.ErrorResponse;
 import com.nisum.reto.infraestructure.adapter.exception.UserException;
-import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ControlAdvice {
     @ExceptionHandler(UserException.class)
-    public ResponseEntity<?> handleEmptyInput(UserException emptyInputException){
-        JSONObject resp = new JSONObject();
-        resp.put("mensaje",emptyInputException.getErrorMessage());
-        return new ResponseEntity<>(resp.toString(), emptyInputException.getErrorCode());
+    public ResponseEntity<ErrorResponse> handleEmptyInput(UserException ex){
+        ErrorResponse error = new ErrorResponse(ex.getErrorMessage());
+        return ResponseEntity.badRequest().body(error);
     }
 }
