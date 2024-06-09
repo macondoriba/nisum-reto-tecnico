@@ -1,4 +1,4 @@
-package com.nisum.reto.domain.model.request;
+package com.nisum.reto.domain.model.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

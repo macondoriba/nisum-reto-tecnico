@@ -10,7 +10,7 @@ import org.mapstruct.Mapping;
 public interface UserDboMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "name", target = "name")
-    @Mapping(source = "emai", target = "email")
+    @Mapping(source = "email", target = "email")
     @Mapping(source = "password", target = "password")
     @Mapping(source = "phones", target = "phones")
     @Mapping(source = "created", target = "created")

@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PhoneDto {
+public class PhoneRequest {
     private Long id;
     private UUID idUser;
     private String number;

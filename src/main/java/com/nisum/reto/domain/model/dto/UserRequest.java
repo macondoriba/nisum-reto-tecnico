@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserDto {
+public class UserRequest {
     private UUID id;
     private LocalDateTime created;
     private LocalDateTime modified;

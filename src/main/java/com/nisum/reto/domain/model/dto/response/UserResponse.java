@@ -1,4 +1,4 @@
-package com.nisum.reto.domain.model;
+package com.nisum.reto.domain.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -7,22 +7,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class UserResponse {
     private UUID id;
-    private String name;
-    private String email;
-    private String password;
-    private List<Phone> phones;
     private LocalDateTime created;
     private LocalDateTime modified;
+    @JsonProperty("last_login")
     private LocalDateTime lastLogin;
     private String token;
+    @JsonProperty("isactive")
     private Boolean isActive;
+
 }

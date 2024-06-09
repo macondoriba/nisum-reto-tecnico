@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -28,12 +29,12 @@ public class UserSpringJpaAdapter implements UserPersistencePort {
     }
 
     @Override
-    public User getByEmail(String email) {
-        return userRepository.findAll()
+    public Optional<User> getByEmail(String email) {
+        return Optional.of(userRepository.findAll()
                 .stream()
                 .map(userDboMapper::toDomain)
                 .filter(p->p.getEmail().equals(email))
                 .collect(Collectors.toList())
-                .get(0);
+                .get(0));
     }
 }
