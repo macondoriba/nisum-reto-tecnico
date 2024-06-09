@@ -2,9 +2,9 @@ package com.nisum.reto.domain.port;
 
 import com.nisum.reto.domain.model.User;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface UserPersistencePort {
     User create(User user);
-    Optional<User> getByEmail(String email);
+    List<User> getByEmail(String email);
 };

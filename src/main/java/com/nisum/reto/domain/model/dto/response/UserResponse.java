@@ -1,6 +1,8 @@
 package com.nisum.reto.domain.model.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nisum.reto.domain.constant.UserConstant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +17,9 @@ import java.util.UUID;
 @Setter
 public class UserResponse {
     private UUID id;
+    @JsonFormat(pattern = UserConstant.FORMAT_DATE_TIME)
     private LocalDateTime created;
+    @JsonFormat(pattern = UserConstant.FORMAT_DATE_TIME)
     private LocalDateTime modified;
     @JsonProperty("last_login")
     private LocalDateTime lastLogin;

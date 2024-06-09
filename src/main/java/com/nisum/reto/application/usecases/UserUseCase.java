@@ -5,5 +5,5 @@ import com.nisum.reto.domain.model.dto.response.UserResponse;
 
 
 public interface UserUseCase {
-    UserResponse createNew(UserRequest request);
+    UserResponse createNew(String authorization, UserRequest request);
 }

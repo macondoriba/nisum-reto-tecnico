@@ -4,9 +4,7 @@ import com.nisum.reto.application.service.UserService;
 
 import com.nisum.reto.domain.model.dto.request.UserRequest;
 import com.nisum.reto.domain.model.dto.response.UserResponse;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/users")
@@ -17,7 +15,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    public UserResponse create(@RequestBody UserRequest userRequest){
-        return userService.createNew(userRequest);
+    @PostMapping()
+    public UserResponse create(@RequestHeader("Authorization") String authorization, @RequestBody UserRequest userRequest){
+        return userService.createNew(authorization,userRequest);
     }
 }

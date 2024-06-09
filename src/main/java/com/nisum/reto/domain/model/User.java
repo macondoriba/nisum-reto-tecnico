@@ -25,4 +25,9 @@ public class User {
     private LocalDateTime lastLogin;
     private String token;
     private Boolean isActive;
+
+    public void setActivityStatus(){
+        this.isActive = true;
+
+    }
 }
