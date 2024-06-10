@@ -1,10 +1,7 @@
 package com.nisum.reto.infraestructure.adapter.persistence.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -20,7 +17,7 @@ public class PhoneEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "user_id")
     private UserEntity user;
     private String  number;
     private String cityCode;

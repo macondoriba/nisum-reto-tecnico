@@ -1,10 +1,8 @@
 package com.nisum.reto.infraestructure.adapter.persistence.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -22,12 +20,12 @@ public class UserEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")
+    @Column(columnDefinition = "BINARY(16)", name = "user_id")
     private UUID id;
     private String name;
     private String email;
     private String password;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = { CascadeType.ALL })
     private Set<PhoneEntity> phones = new HashSet<>();
     private LocalDateTime created;
     private LocalDateTime modified;
@@ -37,13 +35,17 @@ public class UserEntity {
 
     @PrePersist
     public void onCreate() {
-
+        this.setPassword(
+                new BCryptPasswordEncoder()
+                        .encode(this.getPassword()));
         this.created = this.lastLogin = this.modified = LocalDateTime.now();
     }
 
     @PreUpdate
     public void onUpdate() {
-
+        this.setPassword(
+                new BCryptPasswordEncoder()
+                        .encode(this.getPassword()));
         this.lastLogin = this.modified = LocalDateTime.now();
     }
 

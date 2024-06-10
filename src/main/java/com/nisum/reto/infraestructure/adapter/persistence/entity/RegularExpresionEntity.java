@@ -1,18 +1,14 @@
 package com.nisum.reto.infraestructure.adapter.persistence.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "regular_expresions")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 public class RegularExpresionEntity {
 
     @Id
