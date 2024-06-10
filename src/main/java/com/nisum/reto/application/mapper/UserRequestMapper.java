@@ -1,7 +1,6 @@
 package com.nisum.reto.application.mapper;
 
 import com.nisum.reto.domain.model.User;
-
 import com.nisum.reto.domain.model.dto.request.UserRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

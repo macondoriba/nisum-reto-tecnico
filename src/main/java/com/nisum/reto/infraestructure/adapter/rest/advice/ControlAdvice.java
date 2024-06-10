@@ -1,4 +1,4 @@
-package com.nisum.reto.infraestructure.rest.advice;
+package com.nisum.reto.infraestructure.adapter.rest.advice;
 
 import com.nisum.reto.domain.model.dto.response.ErrorResponse;
 import com.nisum.reto.infraestructure.adapter.exception.UserException;

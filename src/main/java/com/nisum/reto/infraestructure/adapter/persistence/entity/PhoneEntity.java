@@ -1,10 +1,13 @@
-package com.nisum.reto.infraestructure.adapter.entity;
+package com.nisum.reto.infraestructure.adapter.persistence.entity;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
+
 @Entity
 @Table(name="phones")
 @AllArgsConstructor

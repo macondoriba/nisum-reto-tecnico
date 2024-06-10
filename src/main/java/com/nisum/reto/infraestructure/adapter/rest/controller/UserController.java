@@ -1,7 +1,6 @@
-package com.nisum.reto.infraestructure.rest.controller;
+package com.nisum.reto.infraestructure.adapter.rest.controller;
 
 import com.nisum.reto.application.service.UserService;
-
 import com.nisum.reto.domain.model.dto.request.UserRequest;
 import com.nisum.reto.domain.model.dto.response.UserResponse;
 import org.springframework.web.bind.annotation.*;

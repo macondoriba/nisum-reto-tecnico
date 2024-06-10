@@ -1,11 +1,10 @@
-package com.nisum.reto.infraestructure;
+package com.nisum.reto.infraestructure.adapter.persistence;
 
 import com.nisum.reto.domain.model.User;
 import com.nisum.reto.domain.port.UserPersistencePort;
-import com.nisum.reto.infraestructure.adapter.mapper.UserDboMapper;
-import com.nisum.reto.infraestructure.adapter.repository.UserRepository;
+import com.nisum.reto.infraestructure.adapter.persistence.mapper.UserDboMapper;
+import com.nisum.reto.infraestructure.adapter.persistence.repository.UserRepository;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,13 +28,11 @@ public class UserSpringJpaAdapter implements UserPersistencePort {
     }
 
     @Override
-    public List<User> getByEmail(String email) {
-
+    public List<User> getAll() {
         return userRepository.findAll()
                 .stream()
                 .map(userDboMapper::toDomain)
-                .filter(p->p.getEmail().equals(email))
                 .collect(Collectors.toList());
-
     }
+
 }

@@ -2,6 +2,8 @@ package com.nisum.reto.domain.model.dto.request;
 
 import lombok.*;
 import java.util.List;
+
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter

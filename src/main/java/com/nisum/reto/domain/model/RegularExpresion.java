@@ -4,16 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.UUID;
+
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Phone {
+public class RegularExpresion {
     private Long id;
-    private UUID idUser;
-    private String number;
-    private String cityCode;
-    private String countryCode;
+    private String code;
+    private String expression;
+    private LocalDateTime created;
+    private LocalDateTime modified;
 }

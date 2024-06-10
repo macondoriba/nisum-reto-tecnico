@@ -1,7 +1,7 @@
-package com.nisum.reto.infraestructure.adapter.mapper;
+package com.nisum.reto.infraestructure.adapter.persistence.mapper;
 
 import com.nisum.reto.domain.model.User;
-import com.nisum.reto.infraestructure.adapter.entity.UserEntity;
+import com.nisum.reto.infraestructure.adapter.persistence.entity.UserEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
