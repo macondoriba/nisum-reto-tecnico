@@ -5,6 +5,8 @@ import com.nisum.reto.domain.model.dto.request.RegularExpresionRequest;
 import com.nisum.reto.domain.model.dto.response.RegularExpressionResponse;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("api/v1/regexp")
 public class RegularExpressionController {
@@ -19,7 +21,7 @@ public class RegularExpressionController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id){
+    public void deleteById(@PathVariable UUID id){
         regularExpressionService.delete(id);
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,7 +46,7 @@ public class RegularExpressionService implements RegularExpressionUseCase {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(UUID id) {
         var expression = regularExpresionPersistencePort.getById(id);
         if(expression==null){
             throw new RegularExpressionException(HttpStatus.BAD_REQUEST,

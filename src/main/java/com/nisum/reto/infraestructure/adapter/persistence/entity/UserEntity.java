@@ -12,21 +12,19 @@ import java.util.UUID;
 
 @Entity
 @Table(name="users")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class UserEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)", name = "user_id")
+    @Column(columnDefinition = "BINARY(16)")
     private UUID id;
     private String name;
     private String email;
     private String password;
-    @OneToMany(mappedBy = "user", cascade = { CascadeType.ALL })
-    private Set<PhoneEntity> phones = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
+    private Set<PhoneEntity> phones;
     private LocalDateTime created;
     private LocalDateTime modified;
     private LocalDateTime lastLogin;

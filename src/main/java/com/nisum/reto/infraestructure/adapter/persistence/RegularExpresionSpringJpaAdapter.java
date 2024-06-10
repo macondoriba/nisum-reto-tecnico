@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -43,7 +44,7 @@ public class RegularExpresionSpringJpaAdapter implements RegularExpresionPersist
     }
 
     @Override
-    public RegularExpresion getById(Long id) {
+    public RegularExpresion getById(UUID id) {
         var optionalExpresion = regularExpresionRepository.findById(id);
         if (optionalExpresion.isEmpty()){
             throw new RegularExpressionException(HttpStatus.NOT_FOUND, String.format(RegularExpressionConstant.REGULAR_EXPRESSION_NOT_FOUND_MESSAGE_ERROR));
@@ -52,7 +53,7 @@ public class RegularExpresionSpringJpaAdapter implements RegularExpresionPersist
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(UUID id) {
         regularExpresionRepository.deleteById(id);
     }
 

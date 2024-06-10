@@ -8,13 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class RegularExpressionResponse {
-    private Long id;
+    private UUID id;
     @JsonFormat(pattern = UserConstant.FORMAT_DATE_TIME)
     private LocalDateTime created;
     @JsonFormat(pattern = UserConstant.FORMAT_DATE_TIME)

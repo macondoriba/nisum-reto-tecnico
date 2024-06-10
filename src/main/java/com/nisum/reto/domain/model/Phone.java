@@ -11,8 +11,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Phone {
-    private Long id;
-    private UUID idUser;
+    private UUID id;
     private String number;
     private String cityCode;
     private String countryCode;

@@ -2,9 +2,10 @@ package com.nisum.reto.infraestructure.adapter.persistence.entity;
 
 
 import lombok.Data;
-
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -12,8 +13,10 @@ import java.time.LocalDateTime;
 public class RegularExpresionEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
     private String code;
     private String expression;
     private LocalDateTime created;

@@ -1,11 +1,9 @@
 package com.nisum.reto.infraestructure.adapter.framework.security;
 
-import com.nisum.reto.domain.model.User;
 import com.nisum.reto.infraestructure.adapter.persistence.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.Collections;
 
