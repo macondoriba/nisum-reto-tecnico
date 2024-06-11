@@ -10,16 +10,16 @@ public class UserRegExAdapter implements RegularExpresionFrameworkPort {
 
     @Override
     public boolean validateRegularExpresionEmail(String email) {
-        return Pattern.compile(UserConstant.EMAIL_ADDRESS_REGULAR_EXPRESSION)
+        return  Pattern.compile(UserConstant.EMAIL_ADDRESS_REGULAR_EXPRESSION)
                 .matcher(email)
-                .matches();
+                .find();
     }
 
     @Override
-    public boolean validateRegularExpresionPassword(String regularExpresion, String password) {
-        return Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")
+    public boolean validateRegularExpresionPassword(String password, String regularExpresion) {
+        return Pattern.compile(regularExpresion)
                 .matcher(password)
-                .matches();
+                .find();
     }
 
 }

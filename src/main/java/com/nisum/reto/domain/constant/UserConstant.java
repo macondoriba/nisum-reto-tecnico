@@ -9,6 +9,7 @@ public class UserConstant {
     public final static String EMAIL_ADDRESS_ALREADY_EXISTS = "Email address  %s already exists.";
     public final static String EMAIL_ADDRESS_INVALID_FORMAT = "Invalid email address format. ";
     public final static String PASSWORD_REGULAR_EXPRESSION_INVALID_FORMAT = "Invalid password format. ";
+    public final static String PASSWORD_REGULAR_EXPRESSION_NOT_FOUND = "Password format not found. ";
     public final static String ACCESS_TOKEN_SECRET = "4qhq8LrEBfYcaRHxhdb9zURb2rf8e7Ud";
     public final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 2_592_000L;
 

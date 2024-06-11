@@ -73,10 +73,13 @@ public class UserService implements UserUseCase {
                 .filter(p->p.getCode().equals(UserConstant.CODE_EXPRESSION_PASSWORD))
                 .collect(Collectors.toList());
         if(!passwords.isEmpty()){
-            if(!regularExpresionFrameworkPort.validateRegularExpresionPassword(passwords.get(0).getExpression(),request.getPassword()))   {
+            if(!regularExpresionFrameworkPort.validateRegularExpresionPassword(request.getPassword(),passwords.get(0).getExpression()))   {
                 throw new UserException(HttpStatus.BAD_REQUEST,
                         String.format(UserConstant.PASSWORD_REGULAR_EXPRESSION_INVALID_FORMAT));
             }
+        }else{
+            throw new UserException(HttpStatus.BAD_REQUEST,
+                    String.format(UserConstant.PASSWORD_REGULAR_EXPRESSION_NOT_FOUND));
         }
 
     }
