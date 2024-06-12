@@ -6,7 +6,6 @@ import com.nisum.reto.domain.model.dto.response.RegularExpressionResponse;
 import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
-
 @RestController
 @RequestMapping("api/v1/regexp")
 public class RegularExpressionController {

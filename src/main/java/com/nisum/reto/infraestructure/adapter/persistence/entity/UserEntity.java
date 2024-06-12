@@ -5,25 +5,29 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="users")
-@Getter
-@Setter
-public class UserEntity {
+public class UserEntity implements Serializable {
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @GeneratedValue
     @Column(columnDefinition = "BINARY(16)")
+           /* (generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(16)")*/
     private UUID id;
     private String name;
     private String email;
     private String password;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     private Set<PhoneEntity> phones;
     private LocalDateTime created;
     private LocalDateTime modified;

@@ -27,7 +27,9 @@ public class UserService implements UserUseCase {
     @Autowired
     public UserService(UserRequestMapper userRequestMapper,
                        UserResponseMapper userResponseMapper,
-                       UserPersistencePort userPersistencePort, RegularExpresionFrameworkPort regularExpresionFrameworkPort, RegularExpresionPersistencePort regularExpresionPersistencePort) {
+                       UserPersistencePort userPersistencePort,
+                       RegularExpresionFrameworkPort regularExpresionFrameworkPort,
+                       RegularExpresionPersistencePort regularExpresionPersistencePort) {
         this.userRequestMapper = userRequestMapper;
         this.userResponseMapper = userResponseMapper;
         this.userPersistencePort = userPersistencePort;

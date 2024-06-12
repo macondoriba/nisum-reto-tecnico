@@ -13,14 +13,14 @@ import java.util.UUID;
 public class RegularExpresionEntity {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @GeneratedValue
     @Column(columnDefinition = "BINARY(16)")
     private UUID id;
     private String code;
     private String expression;
     private LocalDateTime created;
     private LocalDateTime modified;
+
     @PrePersist
     public void onCreate() {
 
