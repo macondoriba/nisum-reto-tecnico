@@ -1,7 +1,7 @@
 package com.nisum.reto.domain.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.nisum.reto.domain.constant.UserConstant;
+import com.nisum.reto.application.util.constants.UserConstant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
