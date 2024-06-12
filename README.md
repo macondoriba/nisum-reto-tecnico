@@ -31,22 +31,8 @@ Pasos a seguir para el funcionamiento de la solución de manera local.
      PASSWORD: ''
 
 
-3) Ejecutar el siguiente script para crear un usuario para el login inicial
 
-```
-INSERT INTO USERS
-VALUES ('44db3-a397-e84de',
-        CURRENT_TIMESTAMP(),
-        'mcondorib@gmail.com',
-        true,
-        CURRENT_TIMESTAMP(),
-       CURRENT_TIMESTAMP(),
-       'marco condori',
-        '$2a$12$mKN5ivlQ0nKNNoPwwy0OJ.2ZH29norAELfbYy4Zdu2mcLkjEwfIRi',
-        'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtY29uZG9yaWJAZ21haWwuY29tIiwiZXhwIjoxNzIwNjAyMjczLCJub21icmUiOiJtYXJjbyBjb25kb3JpIn0.4Sw_iPY-xSeoCa4gTpexnM_Q5kOa633y1j0OnQVHwUc')
-```
-
-4) Ingresar a la siguiente ruta para obtener el Bearer Token en el header de Authorization
+3) Ingresar a la siguiente ruta para obtener el Bearer Token en el header de Authorization
 
  http://localhost:8082/nisum-reto-tecnico/login
 
@@ -57,7 +43,7 @@ VALUES ('44db3-a397-e84de',
    "password": "123456"
 }
 ```
-5) Para registrar usuarios debemos ir a la siguiente ruta:
+4) Para registrar usuarios debemos ir a la siguiente ruta:
 
 http://localhost:8082/nisum-reto-tecnico/api/v1/users
 
