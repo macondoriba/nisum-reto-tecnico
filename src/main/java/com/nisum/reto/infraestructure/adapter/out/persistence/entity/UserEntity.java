@@ -2,31 +2,25 @@ package com.nisum.reto.infraestructure.adapter.out.persistence.entity;
 
 import lombok.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
 
-
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name="users")
 public class UserEntity implements Serializable {
     @Id
     @GeneratedValue
     @Column(columnDefinition = "BINARY(16)")
-           /* (generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")*/
     private UUID id;
     private String name;
     private String email;
     private String password;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "id_user", referencedColumnName = "id")
     private Set<PhoneEntity> phones;
     private LocalDateTime created;
     private LocalDateTime modified;
